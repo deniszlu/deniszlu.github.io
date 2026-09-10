@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冲浪-冲浪运动入门指南与海浪知识全解析</title>
+<meta name="description" content="冲浪运动全面指南：冲浪基本知识、海浪类型与判断、冲浪装备选择、新手入门步骤、安全注意事项与常见问题解答，帮助你系统了解并安全开始冲浪。">
+<meta name="keywords" content="冲浪,冲浪运动,冲浪入门,冲浪装备,海浪知识,冲浪技巧,冲浪安全">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--deep:#0a2a3b;
+--sea:#116b8c;
+--surf:#1fa5c4;
+--foam:#e6f6fa;
+--sand:#f4e9d8;
+--sun:#f5a623;
+--text:#12333f;
+--muted:#4b7285;
+--radius:14px;
+}
+body{
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+color:var(--text);
+background:#f7fbfc;
+line-height:1.75;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 顶部导航 */
+.site-header{
+position:sticky;top:0;z-index:50;
+background:rgba(10,42,59,.94);
+backdrop-filter:blur(8px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.15rem;letter-spacing:1px}
+.logo .wave{
+width:30px;height:30px;border-radius:50%;
+background:linear-gradient(135deg,var(--surf),var(--sun));
+display:flex;align-items:center;justify-content:center;
+font-size:.95rem;color:#06222e;font-weight:800;
+}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{color:#cfe8f0;font-size:.94rem;padding:6px 0;position:relative;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a::after{
+content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+background:var(--sun);transition:width .25s;
+}
+.nav-links a:hover::after{width:100%}
+.nav-toggle{
+display:none;background:none;border:1px solid rgba(255,255,255,.3);
+color:#fff;border-radius:8px;padding:6px 12px;font-size:.9rem;cursor:pointer;
+}
+
+/* 首屏 */
+.hero{
+position:relative;
+background:
+radial-gradient(circle at 78% 18%,rgba(245,166,35,.35),transparent 42%),
+linear-gradient(160deg,#062534 0%,#0d4a63 45%,#1a7d9c 100%);
+color:#fff;
+padding:78px 0 90px;
+overflow:hidden;
+}
+.hero::before{
+content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:150px;
+background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.18),transparent 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:2.6rem;line-height:1.25;letter-spacing:1px;margin-bottom:18px}
+.hero h1 span{color:var(--sun)}
+.hero p.lead{font-size:1.05rem;color:#d3ecf4;max-width:560px;margin-bottom:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+display:inline-block;padding:12px 26px;border-radius:40px;font-size:.96rem;
+font-weight:600;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--sun);color:#3a2400;box-shadow:0 8px 22px rgba(245,166,35,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(245,166,35,.45)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+.hero-facts{
+display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+border-radius:var(--radius);padding:22px;
+}
+.hero-facts .fact b{display:block;font-size:1.35rem;color:var(--sun);line-height:1.2}
+.hero-facts .fact span{font-size:.82rem;color:#c3e2ec}
+
+/* 通用区块 */
+section{padding:66px 0}
+.section-head{margin-bottom:34px}
+.section-head h2{font-size:1.7rem;letter-spacing:.5px;color:var(--deep)}
+.section-head p{color:var(--muted);font-size:.95rem;margin-top:8px;max-width:720px}
+.eyebrow{
+display:inline-block;font-size:.78rem;letter-spacing:2px;color:var(--sea);
+font-weight:700;margin-bottom:10px;text-transform:uppercase;
+}
+
+/* 知识卡片 */
+.know-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+background:#fff;border:1px solid #e2eef2;border-radius:var(--radius);
+padding:26px 24px;transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(13,74,99,.1);border-color:#bfe0ea}
+.card .icon{
+width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+font-size:1.25rem;background:var(--foam);color:var(--sea);margin-bottom:16px;
+}
+.card h3{font-size:1.1rem;margin-bottom:10px;color:var(--deep)}
+.card p{font-size:.92rem;color:var(--muted)}
+
+/* 海浪类型 */
+.wave-section{background:linear-gradient(180deg,#eef8fb 0%,#f7fbfc 100%)}
+.wave-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.wave-item{
+background:#fff;border-left:4px solid var(--surf);border-radius:10px;
+padding:20px 22px;box-shadow:0 4px 14px rgba(13,74,99,.06);
+}
+.wave-item h3{font-size:1.03rem;color:var(--deep);margin-bottom:8px}
+.wave-item p{font-size:.9rem;color:var(--muted)}
+.wave-item .tag{
+display:inline-block;font-size:.74rem;background:var(--foam);color:var(--sea);
+border-radius:20px;padding:2px 10px;margin-left:8px;vertical-align:middle;
+}
+
+/* 装备 */
+.gear-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gear{
+background:#fff;border-radius:var(--radius);overflow:hidden;
+border:1px solid #e2eef2;display:flex;flex-direction:column;
+}
+.gear .top{
+height:86px;display:flex;align-items:center;justify-content:center;
+font-size:1.8rem;color:#fff;
+}
+.gear:nth-child(1) .top{background:linear-gradient(135deg,#1fa5c4,#116b8c)}
+.gear:nth-child(2) .top{background:linear-gradient(135deg,#f5a623,#e07b1a)}
+.gear:nth-child(3) .top{background:linear-gradient(135deg,#2ea36b,#1c7a4c)}
+.gear:nth-child(4) .top{background:linear-gradient(135deg,#6a7fd6,#3f4fa8)}
+.gear .body{padding:18px 18px 22px}
+.gear h3{font-size:1rem;margin-bottom:8px;color:var(--deep)}
+.gear p{font-size:.86rem;color:var(--muted)}
+
+/* 入门步骤 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step}
+.step{
+padding:26px 22px;background:#fff;border:1px solid #e2eef2;
+position:relative;
+}
+.step:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.step:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.step::before{
+counter-increment:step;content:"0" counter(step);
+display:block;font-size:1.6rem;font-weight:800;color:#cfe6ee;margin-bottom:12px;
+}
+.step h3{font-size:1rem;margin-bottom:8px;color:var(--deep)}
+.step p{font-size:.86rem;color:var(--muted)}
+
+/* 安全提示 */
+.safety{background:var(--deep);color:#dceef5}
+.safety .section-head h2{color:#fff}
+.safety .section-head p{color:#9fc6d4}
+.safety-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.safety-card{
+background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+border-radius:var(--radius);padding:22px;
+}
+.safety-card h3{color:var(--sun);font-size:1rem;margin-bottom:10px}
+.safety-card p{font-size:.88rem;color:#bcdbe6}
+
+/* 侧栏布局：术语 + 常见问题 */
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:start}
+.glossary{background:#fff;border:1px solid #e2eef2;border-radius:var(--radius);padding:26px}
+.glossary h2{font-size:1.3rem;margin-bottom:16px;color:var(--deep)}
+.glossary dl{display:grid;gap:14px}
+.glossary dt{font-weight:700;color:var(--sea);font-size:.95rem}
+.glossary dd{font-size:.88rem;color:var(--muted);margin-top:2px}
+.faq{display:grid;gap:14px}
+.faq-item{
+background:#fff;border:1px solid #e2eef2;border-radius:var(--radius);padding:18px 22px;
+}
+.faq-item h3{font-size:.98rem;color:var(--deep);margin-bottom:8px;display:flex;gap:10px}
+.faq-item h3::before{content:"Q";color:var(--sun);font-weight:800}
+.faq-item p{font-size:.88rem;color:var(--muted)}
+
+/* 行动区 */
+.cta{
+background:linear-gradient(120deg,#1fa5c4,#0d4a63);
+border-radius:20px;padding:44px 40px;color:#fff;
+display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+.cta h2{font-size:1.5rem;margin-bottom:10px}
+.cta p{font-size:.94rem;color:#d3ecf4;max-width:560px}
+
+/* 页脚 */
+.site-footer{background:#06202b;color:#8fb6c4;padding:46px 0 26px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:30px}
+.site-footer h4{color:#fff;font-size:1rem;margin-bottom:14px}
+.site-footer p{font-size:.86rem;line-height:1.8}
+.site-footer ul{list-style:none;display:grid;gap:9px}
+.site-footer ul a{font-size:.86rem;color:#8fb6c4;transition:color .2s}
+.site-footer ul a:hover{color:var(--sun)}
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.1);padding-top:20px;
+font-size:.8rem;text-align:center;color:#6c93a3;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+.hero-grid{grid-template-columns:1fr;gap:34px}
+.know-grid,.safety-grid{grid-template-columns:repeat(2,1fr)}
+.gear-grid{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:repeat(2,1fr)}
+.step:first-child{border-radius:var(--radius) 0 0 0}
+.step:nth-child(2){border-radius:0 var(--radius) 0 0}
+.step:nth-child(3){border-radius:0 0 0 var(--radius)}
+.step:last-child{border-radius:0 0 var(--radius) 0}
+.split{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+.nav-links{
+display:none;position:absolute;top:64px;left:0;right:0;
+background:#0a2a3b;flex-direction:column;gap:0;padding:10px 20px 18px;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+.nav-links.open{display:flex}
+.nav-links a{display:block;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-toggle{display:block}
+.hero{padding:52px 0 62px}
+.hero h1{font-size:1.9rem}
+.hero-facts{grid-template-columns:1fr;gap:12px}
+.know-grid,.gear-grid,.safety-grid,.wave-list,.steps{grid-template-columns:1fr}
+.step{border-radius:var(--radius)!important;margin-bottom:12px}
+section{padding:48px 0}
+.cta{padding:32px 24px}
+.footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a href="#" class="logo"><span class="wave">浪</span>冲浪指南</a>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">菜单</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#basics">冲浪基础</a></li>
+      <li><a href="#waves">海浪类型</a></li>
+      <li><a href="#gear">装备选择</a></li>
+      <li><a href="#start">新手入门</a></li>
+      <li><a href="#safety">安全须知</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>冲浪，从读懂一道<span>浪</span>开始</h1>
+        <p class="lead">冲浪是一项借助海浪力量在海面上滑行的水上运动。它既需要体能，也需要对海况的判断力。这里整理了从海浪知识、装备选择到入门步骤与安全要点的完整内容，帮助你在下水前建立清晰认知。</p>
+        <div class="hero-actions">
+          <a href="#start" class="btn btn-primary">查看入门步骤</a>
+          <a href="#safety" class="btn btn-ghost">先看安全须知</a>
+        </div>
+      </div>
+      <div class="hero-facts">
+        <div class="fact"><b>看浪</b><span>判断浪型与方向</span></div>
+        <div class="fact"><b>选板</b><span>按水平匹配器材</span></div>
+        <div class="fact"><b>守规</b><span>尊重海况与他人</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 冲浪基础 -->
+  <section id="basics">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Basics</span>
+        <h2>冲浪基础：这项运动到底在做什么</h2>
+        <p>冲浪的核心，是利用海浪在破碎或尚未破碎时产生的推力，让冲浪板带着人向岸边滑行。理解海浪如何形成、在哪里破碎，是比练习站姿更靠前的一步。</p>
+      </div>
+      <div class="know-grid">
+        <article class="card">
+          <div class="icon">🌊</div>
+          <h3>海浪是怎么来的</h3>
+          <p>海面上的风把能量传递给水面，形成涌浪并向远处传播。当涌浪接近浅水区，海底抬升使波峰变陡，最终破碎成可以冲的浪。</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧭</div>
+          <h3>浪点与海底地形</h3>
+          <p>沙滩、礁石、河口等不同地形会形成不同浪型。沙滩浪通常较柔和，适合练习；礁石浪更陡更有力，对经验和判断要求更高。</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚖️</div>
+          <h3>左右浪与方向</h3>
+          <p>浪从冲浪者视角向左或向右破碎，称为左浪或右浪。判断方向决定你该往哪边起乘，也影响与其他冲浪者的路线安排。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 海浪类型 -->
+  <section id="waves" class="wave-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Waves</span>
+        <h2>常见海浪类型与适用场景</h2>
+        <p>不同浪型对技术的要求差别很大。认识它们，有助于你选择与自身水平匹配的浪点，而不是盲目下水。</p>
+      </div>
+      <div class="wave-list">
+        <article class="wave-item">
+          <h3>白花浪<span class="tag">适合新手</span></h3>
+          <p>浪已经破碎，形成大片白色泡沫，推力稳定、坡度平缓，是练习起乘和站姿的常见选择。</p>
+        </article>
+        <article class="wave-item">
+          <h3>崩浪<span class="tag">中等难度</span></h3>
+          <p>浪峰从一侧逐渐崩落，形成可滑行的斜面，是多数冲浪者日常练习和进阶的主要浪型。</p>
+        </article>
+        <article class="wave-item">
+          <h3>卷浪<span class="tag">进阶挑战</span></h3>
+          <p>浪头快速向前翻卷形成管状空间，力量集中、速度较快，对起乘时机和线路控制要求高。</p>
+        </article>
+        <article class="wave-item">
+          <h3>离岸浪与涌浪<span class="tag">需谨慎</span></h3>
+          <p>远处传来的长周期涌浪往往能量更大。即便表面看起来平缓，也可能在近岸突然抬升，需要提前观察。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 装备 -->
+  <section id="gear">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Gear</span>
+        <h2>冲浪装备：按水平而不是按价格选</h2>
+        <p>新手阶段，合适的器材比昂贵的器材更重要。板型、尺寸和配件都会直接影响学习效率与安全。</p>
+      </div>
+      <div class="gear-grid">
+        <article class="gear">
+          <div class="top">🏄</div>
+          <div class="body">
+            <h3>冲浪板</h3>
+            <p>新手通常从较长、较厚、浮力大的软板开始，起乘更容易，也更安全。随着水平提升再逐步缩短板长。</p>
+          </div>
+        </article>
+        <article class="gear">
+          <div class="top">🔗</div>
+          <div class="body">
+            <h3>脚绳</h3>
+            <p>连接脚踝与冲浪板，落水后防止板被浪冲走。长度一般与板长接近，使用前需检查是否有磨损。</p>
+          </div>
+        </article>
+        <article class="gear">
+          <div class="top">🧴</div>
+          <div class="body">
+            <h3>防磨与防晒</h3>
+            <p>冲浪衣或防晒衣可减少皮肤与板面摩擦，同时提供防晒。长时间在海中，物理防晒通常比涂抹更持久。</p>
+          </div>
+        </article>
+        <article class="gear">
+          <div class="top">🐟</div>
+          <div class="body">
+            <h3>鳍与配件</h3>
+            <p>板鳍影响转向与稳定性，数量与形状因板型而异。新手使用出厂配置即可，不必过早更换。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新手入门 -->
+  <section id="start" style="background:#fff;border-top:1px solid #e2eef2;border-bottom:1px solid #e2eef2;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Start</span>
+        <h2>新手入门：四个循序渐进的阶段</h2>
+        <p>冲浪的进步往往不是线性的。把目标拆成阶段，能减少挫败感，也更容易看清自己卡在哪一步。</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>岸上准备</h3>
+          <p>先在沙滩上练习趴板、划水姿势和起乘动作。把动作顺序记熟，下水后反应会更快。</p>
+        </article>
+        <article class="step">
+          <h3>白花浪练习</h3>
+          <p>在浅水区的白花浪中反复练习起乘与站立，熟悉板的浮力和重心变化，建立基本平衡感。</p>
+        </article>
+        <article class="step">
+          <h3>划水与越浪</h3>
+          <p>学习趴在板上划水、越过大浪的方法。划水效率直接决定你能否抓住浪，是很多人忽视的关键。</p>
+        </article>
+        <article class="step">
+          <h3>斜跑与转向</h3>
+          <p>在能稳定站起后，尝试沿浪壁斜向滑行并做基础转向，逐步从直线滑行过渡到控制线路。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安全 -->
+  <section id="safety" class="safety">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Safety</span>
+        <h2>安全须知：比技术更重要的部分</h2>
+        <p>海洋环境变化快，很多风险来自低估海况或高估自己。以下原则适用于绝大多数冲浪场景。</p>
+      </div>
+      <div class="safety-grid">
+        <article class="safety-card">
+          <h3>先观察再下水</h3>
+          <p>下水前花时间观察浪的节奏、流向和人群分布，确认哪里是通道、哪里容易形成离岸流。</p>
+        </article>
+        <article class="safety-card">
+          <h3>量力而行</h3>
+          <p>选择与自身水平匹配的浪点和浪高。感到疲劳、寒冷或紧张时，及时上岸休息。</p>
+        </article>
+        <article class="safety-card">
+          <h3>遵守冲浪礼仪</h3>
+          <p>离浪头最近的冲浪者拥有优先权。不抢浪、不挡路，既是对他人尊重，也能减少碰撞风险。</p>
+        </article>
+        <article class="safety-card">
+          <h3>结伴而行</h3>
+          <p>尽量不要独自冲浪，尤其在不熟悉的浪点。同伴能在突发情况下提供及时帮助。</p>
+        </article>
+        <article class="safety-card">
+          <h3>注意离岸流</h3>
+          <p>离岸流会把人和板带向外海。遇到时应保持冷静，沿平行于岸边的方向游出水流区域。</p>
+        </article>
+        <article class="safety-card">
+          <h3>保护头部</h3>
+          <p>落水时用手护住头部，避免与板或海底碰撞。浅水区尤其要避免头朝下的入水方式。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 术语 + FAQ -->
+  <section id="faq">
+    <div class="container split">
+      <div class="glossary">
+        <h2>冲浪常用术语速查</h2>
+        <dl>
+          <dt>起乘（Take off）</dt>
+          <dd>在浪推动板前进的瞬间，从趴姿转为站姿的动作。</dd>
+          <dt>浪壁（Face）</dt>
+          <dd>浪尚未破碎的斜面部分，是冲浪者主要滑行的区域。</dd>
+          <dt>浪头（Peak）</dt>
+          <dd>浪最先破碎的最高点，也是判断左右浪方向的位置。</dd>
+          <dt>越浪（Duck dive）</dt>
+          <dd>用板头压入水中穿过浪头的方式，适用于有一定浮力的短板。</dd>
+          <dt>离岸流（Rip current）</dt>
+          <dd>海水从岸边向外海流动的狭窄水流，是海边常见的安全隐患。</dd>
+          <dt>涌浪（Swell）</dt>
+          <dd>由远处风区产生、传播到近岸的长周期波浪，通常能量更集中。</dd>
+        </dl>
+      </div>
+      <div class="faq">
+        <h2 style="font-size:1.3rem;color:var(--deep);margin-bottom:16px;">常见问题</h2>
+        <article class="faq-item">
+          <h3>不会游泳可以学冲浪吗？</h3>
+          <p>不建议。冲浪过程中落水、划水都需要基本水性，具备一定的游泳能力和体能是安全前提。</p>
+        </article>
+        <article class="faq-item">
+          <h3>新手应该选多长的板？</h3>
+          <p>通常建议从较长、浮力大的软板开始，具体尺寸可结合体重和常去浪点的浪况，向当地教练或有经验的冲浪者咨询。</p>
+        </article>
+        <article class="faq-item">
+          <h3>多久能学会站起来？</h3>
+          <p>因人而异，与体能、练习频率和浪况有关。在白花浪中反复练习起乘动作，通常比频繁换浪点更有效。</p>
+        </article>
+        <article class="faq-item">
+          <h3>什么天气适合冲浪？</h3>
+          <p>风况比天气更重要。一般来说，弱风或离岸风有利于形成整齐的浪面，强向岸风则容易让浪变得杂乱。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>从一次安全的岸上观察开始</h2>
+          <p>不必急于下水。先花时间看浪、了解浪点、准备好装备，再在合适条件下开始练习，往往比直接冲进海里进步更快。</p>
+        </div>
+        <a href="#basics" class="btn btn-primary">回到冲浪基础</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>冲浪指南</h4>
+        <p>一个围绕冲浪运动整理的知识型页面，涵盖海浪认知、装备选择、入门步骤与安全要点，内容以通用经验为主，具体海况请以当地实际条件为准。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#basics">冲浪基础</a></li>
+          <li><a href="#waves">海浪类型</a></li>
+          <li><a href="#gear">装备选择</a></li>
+          <li><a href="#start">新手入门</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>安全与参考</h4>
+        <ul>
+          <li><a href="#safety">安全须知</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#waves">术语速查</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">冲浪指南 · 内容仅供学习参考，下水前请评估自身能力与当地海况</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if(toggle && links){
+    toggle.addEventListener('click', function(){
+      links.classList.toggle('open');
+    });
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){ links.classList.remove('open'); }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
