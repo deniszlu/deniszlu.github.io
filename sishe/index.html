@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私摄光堂-私人摄影工作室预约与作品欣赏指南</title>
+<meta name="description" content="私摄光堂是一个专注私人摄影服务的作品与预约平台，提供人像写真、情侣纪念、家庭记录、证件形象照等拍摄类型介绍、选片流程、预约方式与拍摄准备建议，帮助你找到合适的私人摄影工作室。">
+<meta name="keywords" content="私摄光堂,私人摄影,摄影工作室,人像写真,情侣写真,家庭摄影,证件照,约拍,写真预约">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --ink:#1c1a19;
+    --ink-soft:#4a4441;
+    --paper:#faf7f2;
+    --paper-2:#f2ece3;
+    --line:#e2d8c9;
+    --accent:#b06a3b;
+    --accent-deep:#8a4d26;
+    --accent-soft:#f6e6d6;
+    --shadow:0 10px 30px rgba(60,40,20,.08);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{line-height:1.35;margin:0 0 .6em;font-weight:700;}
+  p{margin:0 0 1em;}
+  ul{margin:0;padding-left:1.1em;}
+
+  .wrap{
+    width:min(1140px,92%);
+    margin:0 auto;
+  }
+
+  /* 顶部导航 */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(250,247,242,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:.5px;
+  }
+  .brand-mark{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#e6b98c,#b06a3b 70%);
+    box-shadow:0 0 0 3px var(--accent-soft);
+    flex:none;
+  }
+  .brand small{
+    display:block;
+    font-size:11px;
+    font-weight:500;
+    color:var(--ink-soft);
+    letter-spacing:2px;
+  }
+  .main-nav ul{
+    display:flex;
+    gap:26px;
+    list-style:none;
+    padding:0;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .main-nav a:hover{color:var(--accent-deep);}
+  .header-cta{
+    display:inline-block;
+    padding:9px 20px;
+    border-radius:999px;
+    background:var(--accent);
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+    transition:background .2s;
+  }
+  .header-cta:hover{background:var(--accent-deep);}
+  .nav-toggle{
+    display:none;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    font-size:18px;
+    cursor:pointer;
+    color:var(--ink);
+  }
+
+  /* 首屏 */
+  .hero{
+    padding:64px 0 56px;
+    background:
+      radial-gradient(circle at 88% 12%,rgba(176,106,59,.14),transparent 46%),
+      radial-gradient(circle at 6% 88%,rgba(176,106,59,.10),transparent 42%),
+      var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--accent-deep);
+    background:var(--accent-soft);
+    padding:5px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,44px);
+    letter-spacing:1px;
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--accent-deep);
+  }
+  .hero-lead{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin-bottom:26px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 26px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    transition:.2s;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-deep);}
+  .btn-ghost{border:1px solid var(--accent);color:var(--accent-deep);}
+  .btn-ghost:hover{background:var(--accent-soft);}
+
+  .hero-visual{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto;
+    gap:14px;
+  }
+  .frame{
+    border-radius:var(--radius);
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .frame::after{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border:1px dashed rgba(176,106,59,.35);
+    border-radius:8px;
+    pointer-events:none;
+  }
+  .frame .ico{
+    width:40px;height:40px;
+    border-radius:10px;
+    background:var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .frame h3{font-size:15px;margin-bottom:4px;}
+  .frame p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+  .frame.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:center;}
+
+  /* 通用 section */
+  section{padding:64px 0;}
+  .section-head{
+    max-width:760px;
+    margin-bottom:38px;
+  }
+  .section-head .kicker{
+    font-size:13px;
+    letter-spacing:3px;
+    color:var(--accent);
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  .section-head h2{
+    font-size:clamp(22px,3vw,30px);
+    margin-top:8px;
+  }
+  .section-head p{color:var(--ink-soft);margin:0;}
+
+  /* 拍摄类型卡片 */
+  .type-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+  }
+  .type-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    box-shadow:var(--shadow);
+    transition:transform .2s,border-color .2s;
+  }
+  .type-card:hover{transform:translateY(-4px);border-color:var(--accent);}
+  .type-card .num{
+    font-size:13px;
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:2px;
+  }
+  .type-card h3{font-size:18px;margin:8px 0 10px;}
+  .type-card p{font-size:14.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .type-card ul{font-size:13.5px;color:var(--ink-soft);}
+  .type-card li{margin-bottom:4px;}
+
+  /* 流程 */
+  .flow{
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .flow-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:20px;
+    list-style:none;
+    padding:0;
+    counter-reset:step;
+  }
+  .flow-list li{
+    background:#fff;
+    border-radius:var(--radius);
+    padding:24px 22px;
+    border:1px solid var(--line);
+    position:relative;
+    counter-increment:step;
+  }
+  .flow-list li::before{
+    content:counter(step,decimal-leading-zero);
+    font-size:13px;
+    font-weight:800;
+    color:#fff;
+    background:var(--accent);
+    border-radius:8px;
+    padding:3px 9px;
+    display:inline-block;
+    margin-bottom:12px;
+  }
+  .flow-list h3{font-size:16px;margin-bottom:8px;}
+  .flow-list p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* 作品展示 */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .shot{
+    border-radius:var(--radius);
+    aspect-ratio:3/4;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg,#f7efe4,#e9d9c4);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:16px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s;
+  }
+  .shot:hover{transform:scale(1.02);}
+  .shot span{
+    font-size:12px;
+    color:var(--accent-deep);
+    background:rgba(255,255,255,.85);
+    border-radius:999px;
+    padding:3px 10px;
+    align-self:flex-start;
+    margin-bottom:6px;
+  }
+  .shot strong{font-size:14.5px;}
+  .shot:nth-child(2){background:linear-gradient(160deg,#efe6dc,#d9c6ae);}
+  .shot:nth-child(3){background:linear-gradient(160deg,#f3ece2,#e4d3bd);}
+  .shot:nth-child(4){background:linear-gradient(160deg,#f8f2ea,#e8dac6);}
+  .shot:nth-child(5){background:linear-gradient(160deg,#f1e8dd,#dcc9b1);}
+  .shot:nth-child(6){background:linear-gradient(160deg,#f6eee3,#e2d2bb);}
+  .shot:nth-child(7){background:linear-gradient(160deg,#f4ebdf,#dfcdb6);}
+  .shot:nth-child(8){background:linear-gradient(160deg,#f9f3ea,#eadcc8);}
+
+  /* 选片与准备：双栏 */
+  .split{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:40px;
+    align-items:start;
+  }
+  .tips-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    box-shadow:var(--shadow);
+  }
+  .tips-box h3{font-size:18px;margin-bottom:14px;}
+  .tips-box ul{font-size:14.5px;color:var(--ink-soft);}
+  .tips-box li{margin-bottom:9px;}
+  .check-list{list-style:none;padding:0;}
+  .check-list li{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:10px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .check-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:0;
+    color:var(--accent);
+    font-weight:800;
+  }
+
+  /* 常见问题 */
+  .faq{
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+  }
+  .faq-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .faq-item h3{
+    font-size:16px;
+    margin-bottom:8px;
+    display:flex;
+    gap:10px;
+  }
+  .faq-item h3::before{
+    content:"Q";
+    color:var(--accent);
+    font-weight:800;
+    flex:none;
+  }
+  .faq-item p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* 预约 CTA */
+  .cta-band{
+    background:linear-gradient(135deg,#2c2320,#4a3527);
+    color:#f7efe4;
+    border-radius:var(--radius);
+    padding:44px 40px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:30px;
+    align-items:center;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(20px,2.6vw,26px);}
+  .cta-band p{color:#e0d3c4;margin:0;font-size:15px;}
+  .cta-side{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-side .btn-primary{background:#e6b98c;color:#3a2718;text-align:center;}
+  .cta-side .btn-primary:hover{background:#f0cda6;}
+  .cta-side .btn-ghost{border-color:#e6b98c;color:#f0dcc2;text-align:center;}
+  .cta-side .btn-ghost:hover{background:rgba(230,185,140,.15);}
+
+  /* 页脚 */
+  .site-footer{
+    background:#231d19;
+    color:#cbbdae;
+    padding:52px 0 28px;
+    font-size:14px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:32px;
+    margin-bottom:36px;
+  }
+  .site-footer h3{
+    color:#fff;
+    font-size:15px;
+    margin-bottom:14px;
+  }
+  .site-footer ul{list-style:none;padding:0;}
+  .site-footer li{margin-bottom:8px;}
+  .site-footer a:hover{color:#e6b98c;}
+  .footer-brand p{color:#a2958a;font-size:13.5px;max-width:34ch;}
+  .footer-bottom{
+    border-top:1px solid #3a312b;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+    color:#8f837a;
+  }
+
+  /* 响应式 */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .split{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .faq-list{grid-template-columns:1fr;}
+    .cta-band{grid-template-columns:1fr;padding:34px 26px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    .main-nav{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:10px 0;
+    }
+    .main-nav.open{display:block;}
+    .main-nav ul{
+      flex-direction:column;
+      gap:0;
+    }
+    .main-nav li{border-bottom:1px solid var(--paper-2);}
+    .main-nav a{display:block;padding:12px 6%;}
+    .nav-toggle{display:block;}
+    .header-cta{display:none;}
+    section{padding:48px 0;}
+    .hero{padding:44px 0 38px;}
+    .gallery{grid-template-columns:1fr 1fr;gap:12px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>私摄光堂<small>PRIVATE LIGHT STUDIO</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <ul>
+        <li><a href="#types">拍摄类型</a></li>
+        <li><a href="#works">作品风格</a></li>
+        <li><a href="#flow">预约流程</a></li>
+        <li><a href="#prepare">拍摄准备</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="#booking">预约咨询</a>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">私人摄影 · 一对一拍摄</span>
+        <h1>私摄光堂：把<em>属于你的光</em>，拍成可以反复翻看的照片</h1>
+        <p class="hero-lead">
+          私摄光堂是一个围绕私人摄影服务的作品与预约平台。这里汇总人像写真、情侣纪念、家庭记录、证件形象照等常见拍摄类型，说明从咨询、拍摄到选片的完整流程，并整理拍摄前的准备建议，帮助你判断自己适合哪一种拍摄方式。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#types">查看拍摄类型</a>
+          <a class="btn btn-ghost" href="#flow">了解预约流程</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="frame tall">
+          <div class="ico">📷</div>
+          <h3>一对一沟通</h3>
+          <p>拍摄前确认风格、场景与服装，减少现场反复调整。</p>
+        </div>
+        <div class="frame">
+          <div class="ico">💡</div>
+          <h3>自然用光</h3>
+          <p>以自然光与柔和补光为主，保留真实的皮肤质感。</p>
+        </div>
+        <div class="frame">
+          <div class="ico">🖼️</div>
+          <h3>成片交付</h3>
+          <p>明确精修数量、交付周期与版权使用范围。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 拍摄类型 -->
+  <section id="types">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Shooting Types</span>
+        <h2>私摄光堂常见的拍摄类型</h2>
+        <p>不同拍摄目的，对场景、服装、时长和成片风格的要求并不相同。先明确用途，再选择拍摄方案，通常比直接比较价格更有效。</p>
+      </div>
+      <div class="type-grid">
+        <article class="type-card">
+          <span class="num">01</span>
+          <h3>个人写真</h3>
+          <p>适合记录某个年龄阶段的状态，也常用于社交平台头像、个人介绍配图。</p>
+          <ul>
+            <li>场景：室内影棚、街拍、自然外景</li>
+            <li>建议：提前确定 2–3 套服装风格</li>
+            <li>关注点：表情自然度与整体氛围</li>
+          </ul>
+        </article>
+        <article class="type-card">
+          <span class="num">02</span>
+          <h3>情侣与纪念照</h3>
+          <p>用于恋爱纪念、结婚登记前后、周年纪念等具有时间节点的记录。</p>
+          <ul>
+            <li>场景：城市街景、公园、海边、室内</li>
+            <li>建议：服装色系统一，避免复杂图案</li>
+            <li>关注点：互动感而非僵硬摆拍</li>
+          </ul>
+        </article>
+        <article class="type-card">
+          <span class="num">03</span>
+          <h3>家庭与亲子记录</h3>
+          <p>以家庭成员日常互动为主，强调真实情绪与生活气息。</p>
+          <ul>
+            <li>场景：家中、社区、户外草地</li>
+            <li>建议：选择孩子状态较好的时段</li>
+            <li>关注点：抓拍多于摆拍</li>
+          </ul>
+        </article>
+        <article class="type-card">
+          <span class="num">04</span>
+          <h3>证件与形象照</h3>
+          <p>用于简历、工牌、职业社交平台等需要规范形象的场合。</p>
+          <ul>
+            <li>场景：纯色背景影棚</li>
+            <li>建议：按用途确认底色与尺寸要求</li>
+            <li>关注点：仪态、光线均匀度与合规性</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品风格 -->
+  <section id="works" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Style Reference</span>
+        <h2>先看风格，再谈拍摄</h2>
+        <p>以下为私摄光堂常见的风格方向示意。实际拍摄前，建议与摄影师确认参考图，明确你想要的色调、构图与情绪，避免成片与预期偏差。</p>
+      </div>
+      <div class="gallery">
+        <div class="shot"><span>自然光</span><strong>清晨窗边</strong></div>
+        <div class="shot"><span>胶片感</span><strong>暖调街拍</strong></div>
+        <div class="shot"><span>极简</span><strong>纯色背景</strong></div>
+        <div class="shot"><span>生活感</span><strong>居家记录</strong></div>
+        <div class="shot"><span>情绪向</span><strong>低调光影</strong></div>
+        <div class="shot"><span>纪念向</span><strong>双人互动</strong></div>
+        <div class="shot"><span>职业向</span><strong>形象照</strong></div>
+        <div class="shot"><span>户外</span><strong>草地与树影</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 预约流程 -->
+  <section id="flow" class="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Booking Flow</span>
+        <h2>从咨询到拿到成片，一般经历这几步</h2>
+        <p>流程清晰可以减少沟通成本。不同工作室的具体安排会有差异，但核心环节基本一致。</p>
+      </div>
+      <ol class="flow-list">
+        <li>
+          <h3>需求沟通</h3>
+          <p>说明拍摄用途、人数、期望风格与可拍摄时间，确认是否匹配。</p>
+        </li>
+        <li>
+          <h3>方案与档期</h3>
+          <p>确定场景、时长、服装套数、成片数量与费用构成，锁定档期。</p>
+        </li>
+        <li>
+          <h3>拍摄执行</h3>
+          <p>现场由摄影师引导动作与情绪，过程中可随时沟通调整。</p>
+        </li>
+        <li>
+          <h3>选片与精修</h3>
+          <p>按约定方式选片，确认精修范围与交付时间，完成后期处理。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 拍摄准备 -->
+  <section id="prepare">
+    <div class="wrap split">
+      <div>
+        <div class="section-head" style="margin-bottom:22px;">
+          <span class="kicker">Preparation</span>
+          <h2>拍摄前的准备清单</h2>
+          <p>准备越充分，现场越轻松。以下建议适用于大多数私人摄影场景。</p>
+        </div>
+        <ul class="check-list">
+          <li>提前与摄影师确认参考图，明确喜欢的色调与不喜欢的风格。</li>
+          <li>服装以合身、无大面积logo为宜，多套服装注意色系统一。</li>
+          <li>拍摄前一天保证休息，避免熬夜导致面部浮肿或状态不佳。</li>
+          <li>如需化妆造型，提前确认是否包含在服务内，或自行准备。</li>
+          <li>携带必要物品：备用衣物、梳子、纸巾、饮用水、常用补妆用品。</li>
+          <li>外景拍摄关注天气与光线时段，必要时准备备选方案。</li>
+          <li>儿童或老人参与时，预留休息时间，避免长时间连续拍摄。</li>
+          <li>提前确认成片数量、精修张数、交付格式与使用授权范围。</li>
+        </ul>
+      </div>
+      <aside class="tips-box">
+        <h3>选择工作室时的注意事项</h3>
+        <ul>
+          <li><strong>看完整作品：</strong>不只关注精选图，也了解普通客片的稳定水平。</li>
+          <li><strong>确认费用明细：</strong>问清是否包含服装、化妆、场地、精修与加片费用。</li>
+          <li><strong>明确交付周期：</strong>了解选片时间、精修时长与成片交付方式。</li>
+          <li><strong>确认版权与隐私：</strong>作品是否可用于展示，需在拍摄前沟通清楚。</li>
+          <li><strong>保留沟通记录：</strong>重要约定建议以文字形式确认，减少理解偏差。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于私人摄影的常见问题</h2>
+        <p>以下问题在咨询中出现频率较高，可作为与工作室沟通时的参考。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>完全没有拍摄经验，会不会很尴尬？</h3>
+          <p>多数私人摄影会由摄影师引导动作与站位，不需要提前练习。若担心紧张，可以选择先拍少量试拍，适应后再进入正式拍摄。</p>
+        </div>
+        <div class="faq-item">
+          <h3>拍摄一般需要多长时间？</h3>
+          <p>个人写真通常在 1–3 小时，情侣或家庭拍摄视人数与场景而定，可能更长。具体时长建议在预约时确认，并预留往返与换装时间。</p>
+        </div>
+        <div class="faq-item">
+          <h3>成片数量和精修张数怎么理解？</h3>
+          <p>成片通常指经过基础调整的照片，精修则包含更细致的皮肤、色调与瑕疵处理。两者数量、加片费用应在预约前问清。</p>
+        </div>
+        <div class="faq-item">
+          <h3>拍摄当天状态不好怎么办？</h3>
+          <p>可提前与摄影师沟通，通过调整光线、角度与拍摄节奏来改善。如遇身体不适，建议优先协商改期，避免勉强拍摄。</p>
+        </div>
+        <div class="faq-item">
+          <h3>照片会被公开发布吗？</h3>
+          <p>是否用于作品展示应由双方事先约定。如不希望公开，应在拍摄前明确提出，并以文字形式确认。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何判断报价是否合理？</h3>
+          <p>不应只看总价，而要综合拍摄时长、场景数量、服装套数、成片与精修数量、是否含化妆造型等因素比较。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 预约 CTA -->
+  <section id="booking" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>准备开始一次属于自己的拍摄</h2>
+          <p>整理好你的拍摄用途、期望风格和可安排的时间，与摄影师沟通会更高效。私摄光堂希望每一组照片都能经得起时间回看。</p>
+        </div>
+        <div class="cta-side">
+          <a class="btn btn-primary" href="#types">先确定拍摄类型</a>
+          <a class="btn btn-ghost" href="#prepare">查看准备清单</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>私摄光堂</h3>
+        <p>围绕私人摄影的作品展示、拍摄类型说明与预约流程整理，帮助你在拍摄前把需求想清楚。</p>
+      </div>
+      <div>
+        <h3>拍摄类型</h3>
+        <ul>
+          <li><a href="#types">个人写真</a></li>
+          <li><a href="#types">情侣纪念</a></li>
+          <li><a href="#types">家庭亲子</a></li>
+          <li><a href="#types">证件形象照</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>拍摄指南</h3>
+        <ul>
+          <li><a href="#flow">预约流程</a></li>
+          <li><a href="#prepare">准备清单</a></li>
+          <li><a href="#works">风格参考</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>沟通建议</h3>
+        <ul>
+          <li>提前确认费用明细</li>
+          <li>明确成片与精修数量</li>
+          <li>约定版权与隐私范围</li>
+          <li>保留文字沟通记录</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>私摄光堂 · 私人摄影信息整理与参考</span>
+      <span>页面内容仅供拍摄前参考，具体服务以实际沟通为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A' && window.innerWidth <= 720){
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+  </html>
